@@ -380,3 +380,31 @@ return ways(n, k-1, curr +1) + ways(n, k-1, curr-1);
         else 
             return -1;
     
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+	
+	/** Exam 2018a ?? question #1 **/ // - Nadav Taragan (tarago)
+	
+	
+public static int getMe (int num, int max) {
+    if (num == 1 ) {return max;}
+    return getMe(max, max, max, num) ;
+}
+
+private static int getMe ( int max, int maxOrginal, int maxOrginalReal, int numOrginalReal) {
+if (numOrginalReal == 1 || maxOrginal == 1)
+	return 0;
+if (max == 0)
+    return getMe(maxOrginal-1, maxOrginal-1, maxOrginalReal, numOrginalReal-1);
+if (max >0 )
+return getSidra(max) + getMe( max-1,maxOrginal,  maxOrginalReal, numOrginalReal); 
+
+else 
+    return 0;
+}
+
+
+private static int getSidra (int a) { /// calculate the sidra like this: x + x-1 + x-2 + 2-3 ...... + 0.
+if (a == 0)
+	return 0;
+return a + getSidra (a-1);
+}
