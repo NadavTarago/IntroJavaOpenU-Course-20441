@@ -22,6 +22,39 @@
 
 
     } 
+
+	--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+     /** Exam 2013b  83 a3 Question#1 **/ 
+    public static boolean balancedPartition (int[] arr) {
+        if (arr == null || arr.length == 0 || arr.length %2 != 0) 
+            return false; 
+        if (sumArr(arr, 0) %2 != 0)
+            return false; 
+        int half = sumArr(arr, 0)/ 2;
+
+
+        return balancedPartition(arr, 0, 0, 0,0,0, half);
+
+   }
+     /** Exam 2013b  83 a3 Question#1 **/ 
+    private static boolean balancedPartition (int[] arr, int i, int a, int aSize, int b, int bSize, int half) {
+        if (i == arr.length)
+            if ( a==b && aSize == half)
+                return true;
+            else 
+                return false;
+
+
+        return (balancedPartition (arr, i+1,a+1, aSize + arr[i],b, bSize, half) ||balancedPartition (arr, i+1,a, aSize,b+1, bSize+ b+arr[i], half));
+    }
+         /** Exam 2013b  83 a3 Question#1 **/ 
+    private static int sumArry (int[] arr, int i) {
+        if (i == arr.length)
+            return 0; 
+        return arr[i] + sumArry(arr, i +1); 
+
+    }
 	 --------------------------------------------------------------------------------------------------------------------------------------------------------------
 /** Exam 2013b b3 92 question #1 **/ // - Nadav Taragan (tarago)
 public static int longestFlat (int[] a) {
