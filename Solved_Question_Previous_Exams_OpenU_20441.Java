@@ -198,7 +198,36 @@ public static void printParirs (int[] a, int k) {
 	
 	
 	 --------------------------------------------------------------------------------------------------------------------------------------------------------------
-	 
+	     /** Exam 2015a  a2 83 Question#1 Return the shortest length to the legal path to the last index**/  // - Nadav Taragan (tarago)
+	
+
+public static int shortestPath (int[][] mat) {
+
+	return shortestPath (mat, 0, 0, 0); 
+}
+
+	     /** Exam 2015a  a2 83 Question#1 Return the shortest length to the legal path to the last index**/  // - Nadav Taragan (tarago)
+
+private static int shortestPath (int[][] mat, int i, int j,int prev) {
+
+	if (j == mat[0].length-1 && i == mat.length-1)
+		return 0; // הגענו ליעד
+	if (j < 0 || i < 0 || i == mat.length || j == mat[0].length || mat[i][j] <= prev)
+		return i*j; // אם הצעד לא תקין , תחזיר מספר גבוהה יותר משיכול להתקבל כשנתון שיש לפחות תוצאה אחת נכונה.
+
+
+	int up =1+ shortestPath(mat, i, j-1, mat[i][j]);
+	int down = 1+ shortestPath (mat, i, j+1, mat[i][j]);
+	int right = 1+ shortestPath (mat, i-1,j, mat[i][j]);
+	int left = 1+ shortestPath (mat, i+1, j, mat[i][j]);
+
+
+	return Math.min(Math.min(up,down),Math.min(right,left));
+
+}
+			    
+			    
+	--------------------------------------------------------------------------------------------------------------------------------------------------------------		    
 	     /** Exam 2015a  a4 Question#1 Count how many ropes are in the array**/  // - Nadav Taragan (tarago)
     public static int countRopes (int[][] mat){
      if (mat == null)
