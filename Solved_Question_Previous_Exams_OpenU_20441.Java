@@ -171,11 +171,18 @@ public static void printParirs (int[] a, int k) {
 
     /** Exam 2015a 89 Question#1 **/  // - Nadav Taragan (tarago)
     public static boolean splitEqualMult(int[] a) {
-        double root = Math.sqrt(dup(a, 0, 1)); 
+        double root = Math.sqrt(dup(a, 0); 
         return
             splitEqualMult(a, 0, 1, root);
         }
-        
+          /** Duplicate each number in the array**/
+    private static int dup (int[] arr, int i{
+	if (i == arr.length)
+		return 1; 
+	return arr[i] * dup(arr, i+1);
+
+}     
+
 
         /** Exam 2015a 89 Question#1 **/  // - Nadav Taragan (tarago)
     private static boolean splitEqualMult (int[] a, int i , int sum, double root){
