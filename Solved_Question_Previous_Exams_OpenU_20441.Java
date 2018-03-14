@@ -451,29 +451,23 @@ return ways(n, k-1, curr +1) + ways(n, k-1, curr-1);
     
 --------------------------------------------------------------------------------------------------------------------------------------------------------------
 	
-	/** Exam 2018a ?? question #1 **/ // - Nadav Taragan (tarago)
+	/** Exam 2018a ?? question #1 **/
 	
-	
-public static int getMe (int num, int max) {
-    if (num == 1 ) {return max;}
-    return getMe(max, max, max, num) ;
+	public static int sorted (int n ,int max){
+ if (n == 0 || max == 0){
+     return 0;
+    }
+    return sorted(n,max,1);
+}
+private static int sorted (int n ,int max, int curr) {
+ if (curr > max){
+ return 0;
+}
+ if (n == 0) {
+ return 1;
+}
+return 
+sorted(n-1, max, curr)  + sorted(n, max, curr+1) ;
+}
 }
 
-private static int getMe ( int max, int maxOrginal, int maxOrginalReal, int numOrginalReal) {
-if (numOrginalReal == 1 || maxOrginal == 1)
-	return 0;
-if (max == 0)
-    return getMe(maxOrginal-1, maxOrginal-1, maxOrginalReal, numOrginalReal-1);
-if (max >0 )
-return getSidra(max) + getMe( max-1,maxOrginal,  maxOrginalReal, numOrginalReal); 
-
-else 
-    return 0;
-}
-
-
-private static int getSidra (int a) { /// calculate the sidra like this: x + x-1 + x-2 + 2-3 ...... + 0.
-if (a == 0)
-	return 0;
-return a + getSidra (a-1);
-}
