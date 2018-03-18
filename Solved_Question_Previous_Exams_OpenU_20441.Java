@@ -425,10 +425,35 @@ return ways(n, k-1, curr +1) + ways(n, k-1, curr-1);
     
 
 }
+			    
 	
 	--------------------------------------------------------------------------------------------------------------------------------------------------------------
-	
+		/** Exam 2017a a5 86 question #1 **/ // - Nadav Taragan (tarago)
+	    
+	public static int edit (String str1, String str2) {
 
+	return edit (str1, 0, str2, 0);
+}
+		/** Exam 2017a a5 86 question #1 **/ // - Nadav Taragan (tarago)
+
+
+private static int edit (String str1, int s1, String str2, int s2) {
+	if (s1 == str1.length() && s2 == str2.length())
+		return 0;
+	if (s1 == str1.length())
+	   return str2.length() - str1.length(); 
+	if (s2 == str2.length()) 
+	   return str1.length() - str2.length(); 
+	   
+	if (str1.charAt(s1) == str2.charAt(s2)) 
+		return edit(str1, s1+1, str2, s2+1); 
+	int add =1+ edit(str1, s1, str2, s2+1); 
+	int remove =1+ edit(str1, s1+1, str2, s2);
+	
+	return Math.min(add, remove); 
+	
+}
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
 
     public static int oneFiveSeven (int num) { // what is the minumum actions we need to do to make a number by the options : add 1, add 5, add 7?  // - Nadav Taragan (tarago)
         if (num == 0)
