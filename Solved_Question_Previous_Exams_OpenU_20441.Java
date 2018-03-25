@@ -8,7 +8,7 @@
         return equalSum(arr, 0, 0); // means it found answer.
 } 
 
-                /** Exam 2007a b1 Question#1 **/ 
+                /** Exam 2007a b1 Question#1 **/  // - Nadav Taragan (tarago)
     private static int equalSum(int[] arr, int i, int sum) {
             if (i == arr.length) 
                 return sum; 
@@ -25,7 +25,7 @@
 
 	--------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-     /** Exam 2013b  83 a3 Question#1 **/ 
+     /** Exam 2013b  83 a3 Question#1 **/ // - Nadav Taragan (tarago)
     public static boolean balancedPartition (int[] arr) {
         if (arr == null || arr.length == 0 || arr.length %2 != 0) 
             return false; 
@@ -37,7 +37,7 @@
         return balancedPartition(arr, 0, 0, 0,0,0, half);
 
    }
-     /** Exam 2013b  83 a3 Question#1 **/ 
+     /** Exam 2013b  83 a3 Question#1 **/ // - Nadav Taragan (tarago)
     private static boolean balancedPartition (int[] arr, int i, int a, int aSize, int b, int bSize, int half) {
         if (i == arr.length)
             if ( a==b && aSize == half)
@@ -48,7 +48,7 @@
 
         return (balancedPartition (arr, i+1,a+1, aSize + arr[i],b, bSize, half) ||balancedPartition (arr, i+1,a, aSize,b+1, bSize+ b+arr[i], half));
     }
-         /** Exam 2013b  83 a3 Question#1 **/ 
+         /** Exam 2013b  83 a3 Question#1 **/ // - Nadav Taragan (tarago)
     private static int sumArry (int[] arr, int i) {
         if (i == arr.length)
             return 0; 
