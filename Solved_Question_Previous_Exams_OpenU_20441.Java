@@ -77,6 +77,34 @@ private static int longestFlat(int[] a, int i, int j, int maxTemp, int max){
         return longestFlat( a, i+1,i+2, 0,max) ;    
 }
 --------------------------------------------------------------------------------------------------------------------------------------------------------------
+/** Exam 2013b b3 92 question #2 **/ // - Nadav Taragan (tarago)
+	// Also appeared in Exam 2018a Moaaed b! !
+	//** time: O(n). k considered as final!!! 
+	public static int sortMod (int[] arr, int k) {
+
+	int curr = 0;
+	int temp;
+
+
+	for (int thisStage= 0; thisStage<k; begin+) {
+		for (int now = curr; now < arr.length; now++) 
+		{
+			if (arr[now] == thisStage)
+			{
+				temp = arr[curr]
+				arr[curr] = arr[now];
+				arr[now] = temp; 
+				cur++;
+			}
+		
+		
+		}
+	}
+
+
+}
+	
+	--------------------------------------------------------------------------------------------------------------------------------------------------------------
 
  /** Exam 2014b a4 85 Question#1     **/ // - Nadav Taragan (tarago)
     public static int longestWorm (int[][] mat) {
