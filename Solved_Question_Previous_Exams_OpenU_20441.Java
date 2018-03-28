@@ -21,7 +21,34 @@
                 return equalSum(arr, i+1,sum + arr[i]) ;
 
 
-    } 
+    }
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+     /** Exam 2009b  96 b6 Question#1 **/  // by Nadav Taragan (Tarago) 
+public static boolean samePattern (String s1, String s2) {
+    return samePattern(s1, 0, s2, 0); 
+}
+
+     /** Exam 2009b  96 b6 Question#1 **/  // by Nadav Taragan (Tarago) 
+private static boolean samePattern (String s1, int i1, String s2, int i2) {
+
+
+
+if (i1 == s1.length() && i2 == s2.length() || i1 == s1.length() && s2.charAt(s2.length()-1)== '*') // if we in the end of the strings, or if we in the end of String1, but not in String2, but we are in the last index of String2 and there is '*' there. we can return true.
+    return true; 
+
+if (i1 == s1.length() || i2 == s2.length()) // if we are in the end of one of the Strings and the first condition didn't return us true, so return false.
+    return false; 
+
+
+if (s1.charAt(i1) == s2.charAt(i2)) // if so, we can pass to the next char in the String. 
+    return samePattern(s1, i1+1, s2, i2+1);
+if (s1.charAt(i1) != s2.charAt(i2) && s2.charAt(i2) != '*') // it means we got into 'deadend' - return false.
+    return false;
+
+    // try 2 steps - or use the "joker" or stop use it. 
+return samePattern(s1, i1+1, s2, i2+1) || samePattern(s1, i1+1, s2, i2);
+
+}
 
 	--------------------------------------------------------------------------------------------------------------------------------------------------------------
 
