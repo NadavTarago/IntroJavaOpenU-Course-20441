@@ -107,7 +107,7 @@ private static int longestFlat(int[] a, int i, int j, int maxTemp, int max){
 /** Exam 2013b b3 92 question #2 **/ // - Nadav Taragan (tarago)
 	// Also appeared in Exam 2018a Moaaed b! !
 	//** time: O(n). k considered as final!!! 
-	public static int sortMod (int[] arr, int k) {
+	public static void sortMod (int[] arr, int k) {
 
 	int curr = 0;
 	int temp;
@@ -585,7 +585,7 @@ private static int sumArry (int[] arr, int i) {
 /** Exam 2018a  b91 Question#2 **/  // by Nadav Taragan (Tarago) 
 
 //** time: O(n). k considered as final!!! 
-	public static int sortMod (int[] arr, int k) {
+	public static void sortMod (int[] arr, int k) {
 
 	int curr = 0;
 	int temp;
