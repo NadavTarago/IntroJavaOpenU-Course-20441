@@ -549,5 +549,38 @@ private static int sorted (int n ,int max, int curr) {
 return 
 sorted(n-1, max, curr)  + sorted(n, max, curr+1) ;
 }
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+	    
+	    
+     /** Exam 2018a  b91 Question#1 **/  // by Nadav Taragan (Tarago) 
+	    
+	    public static int chepastRoute (int[] stations) { 
+    return chepastRoute(stations, 0);
+}
+     /** Exam 2018a  b91 Question#1 **/  // by Nadav Taragan (Tarago) 
+
+private static int chepastRoute (int[] stations, int i)   {
+    if (i > stations.length -1)
+        return sumArry(stations, 0); // if we out of index- return the sum of the the array. (it must be higher than the correct option and will never be return to the user) 
+    if (i == stations.length -1) 
+        return stations[stations.length -1]; 
+    if (i == stations.length -2) 
+        return chepastRoute (stations, i+1) + stations[stations.length -2];
+
+    int opt1 = stations[i] + chepastRoute(stations, i+1); 
+    int opt2 = stations[i] + chepastRoute(stations, i+2); 
+
+    return (opt1 > opt2 ? opt2: opt1);
+
+}
+     /** Exam 2018a  b91 Question#1 **/  // by Nadav Taragan (Tarago) 
+
+private static int sumArry (int[] arr, int i) {
+   if (i == arr.length) 
+        return 0;
+        
+   return arr[i] + sumArry (arr, i+1); 
+}
+--------------------------------------------------------------------------------------------------------------------------------------------------------------	    
 }
 
