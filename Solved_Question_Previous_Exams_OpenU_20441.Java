@@ -582,5 +582,32 @@ private static int sumArry (int[] arr, int i) {
    return arr[i] + sumArry (arr, i+1); 
 }
 --------------------------------------------------------------------------------------------------------------------------------------------------------------	    
+/** Exam 2018a  b91 Question#2 **/  // by Nadav Taragan (Tarago) 
+
+//** time: O(n). k considered as final!!! 
+	public static int sortMod (int[] arr, int k) {
+
+	int curr = 0;
+	int temp;
+
+
+	for (int thisStage= 0; thisStage<k; begin+) {
+		for (int now = curr; now < arr.length; now++) 
+		{
+			if (arr[now] == thisStage)
+			{
+				temp = arr[curr]
+				arr[curr] = arr[now];
+				arr[now] = temp; 
+				cur++;
+			}
+		
+		
+		}
+	}
+
+
 }
+--------------------------------------------------------------------------------------------------------------------------------------------------------------    
+    }
 
