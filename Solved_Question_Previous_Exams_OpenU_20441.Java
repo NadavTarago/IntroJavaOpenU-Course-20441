@@ -534,7 +534,49 @@ private static int edit (String str1, int s1, String str2, int s2) {
             return -1;
     
 --------------------------------------------------------------------------------------------------------------------------------------------------------------
+	/** Exam 2017b4 93 question #1 **/
 	
+	    public static int cntTrueReg(boolean[][] mat) {
+        return cntTrueReg(mat, 0,0);
+    }
+
+    
+    private static int cntTrueReg(boolean[][] mat, int i, int j){
+        if (i == mat.length)
+            return cntTrueReg(mat, 0, j+1);
+        
+        if (j == mat[0].length)
+            return 0;
+        
+        if (mat[i][j] == true) {
+            toFalse(mat, i, j);
+                return 1 + cntTrueReg(mat, i+1, j);
+        }
+        return cntTrueReg(mat, i+1, j);
+    }
+    
+    private static void toFalse(boolean[][] mat, int i, int j) {
+        mat[i][j] = false;
+        if(i < mat.length-1 && mat[i+1][j] == true)
+            toFalse(mat, i+1, j);
+        if(j < mat.length-1 && mat[i][j+1] == true)
+            toFalse(mat, i, j+1);
+        
+    }
+
+    private static boolean allFlase(boolean[][] mat, int i, int j) {
+
+        if(i==mat.length || j==mat.length) 
+            return true;
+        if(mat[i][j] == false)
+            return allFlase(mat, i+1, j) && allFlase(mat, i, j+1);
+        else return false;
+    }
+
+	
+	
+	
+--------------------------------------------------------------------------------------------------------------------------------------------------------------	
 	/** Exam 2018a ?? question #1 **/
 	
 	public static int sorted (int n ,int max){
