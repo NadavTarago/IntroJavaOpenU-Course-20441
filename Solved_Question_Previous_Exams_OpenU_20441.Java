@@ -654,9 +654,35 @@ private static int sumArry (int[] arr, int i) {
 
 
 }
+	    
+/** Exam 2019a  a84 478 Question#1 **/  // by Nadav Taragan (Tarago) 
+	    
+	    
+    public static boolean sumPower3(int num)
+	    {
+		return sumPower3(num, 0);
+	    }
+    
+    
+    private static boolean sumPower3(int num, int power) {
+        if (num == 0)
+            return true;
+        if (num < 0)
+            return false;
+        if ((num - Math.pow(3, power) ) < 0)
+            return false;
+            
+        return sumPower3(num, power+1) ||
+           sumPower3((int)(num-Math.pow(3, power)),power+1);
+    }
+	    
+	    
+---------------------------------------------------------------------------    
+	    
+	    
 --------------------------------------------------------------------------------------------------------------------------------------------------------------    
     }
-The following codes written by @ishayhil
+The following codes were written by @ishayhil
 
 /**
  * OpenUniversity old intoToCs exams solved questions.
