@@ -54,6 +54,33 @@ return samePattern(s1, i1+1, s2, i2+1) || samePattern(s1, i1+1, s2, i2);
 
 }
 
+
+	--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+// Exam 2012a 81 a  Question#1
+    private static boolean splitEqualSum (int [] a,int s1,int s2, int i)
+    {
+        if (i==a.length)
+            if(s1==s2)
+                return true;
+            else
+                return false;
+                
+        return splitEqualSum(a, s1+a[i], s2, i+1) || splitEqualSum(a, s1, s2+a[i], i+1);
+     
+        
+        /* if (splitEqualSum(a, s1+a[i], s2, i+1))
+            return true;
+        return (splitEqualSum(a, s1, s2+a[i], i+1));  
+        */
+    }
+    public static boolean splitEqualSum (int [] a)
+    {
+        return splitEqualSum(a,0,0,0);
+    }
+
+
+
 	--------------------------------------------------------------------------------------------------------------------------------------------------------------
 
      /** Exam 2013b  83 a3 Question#1 **/ // - Nadav Taragan (tarago)
